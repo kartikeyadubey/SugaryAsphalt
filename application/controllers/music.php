@@ -1,0 +1,54 @@
+<?php
+class Music extends CI_Controller{
+	
+	function __construct() {
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->helper('form');
+	}
+		
+	
+	function index(){	
+		$data['page_limit'] = 10;
+		
+		if(($this->uri->segment(3))==NULL)
+			$data['page_num'] = 1;
+		else
+			$data['page_num'] = $this->uri->segment(3);
+			
+		$data['query'] = $this->db->get('entries',($data['page_num'])*$data['page_limit'],($data['page_num']-1)*$data['page_limit']);
+		$data['content'] = 'main_view';
+
+		$this->load->view('template', $data);
+	}
+	
+	function comments(){
+		$this->db->where('entry_id', $this->uri->segment(3));
+		$data['query'] = $this->db->get('comments');
+		$data['content'] = 'comment_view';
+		$this->load->view('template', $data);
+	}
+	
+	function comment_insert(){
+		$this->db->insert('comments', $_POST);
+		redirect('music/comments/'.$_POST['entry_id']);
+	}
+	
+	function genre(){
+		$data['page_limit'] = 10;
+		if(($this->uri->segment(4))==NULL)
+			$data['page_num'] = 1;
+		else
+			$data['page_num'] = $this->uri->segment(4);
+			
+		$data['content'] = 'genre_view';	
+		$data['searched'] = $this->uri->segment(3);
+		$this->db->where('genre', $data['searched']);
+		$data['query'] = $this->db->get('entries',($data['page_num'])*$data['page_limit'],($data['page_num']-1)*$data['page_limit']);
+		
+		$this->load->view('template', $data);
+		
+	}
+	
+}
+?>

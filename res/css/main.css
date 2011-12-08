@@ -1,0 +1,93 @@
+body {
+	background: black url(../images/background.png) fixed center ;
+}
+
+#wrapper{
+	width: 800px;	
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+#banner{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main_display{
+	margin: 20px;
+	background: white;
+}
+
+#main_display_table{
+	margin-left: 35px;
+	margin-right: 35px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-family: 'Cagliostro', sans-serif;
+}
+
+#main_display_table a{
+	font-family: 'Nova Mono', cursive;
+	font-style:normal;
+	color: green;
+}
+
+#test{
+	color: red;
+	border: 5px solid white;
+	text-align: center;
+	background: pink;
+}
+
+#main_left_top{
+	background: url('../images/main_div_left_top.png');
+	background-repeat:no-repeat;
+	background-position:left top; 
+}
+
+#main_right_top{
+	background: url('../images/main_div_right_top.png');
+	background-repeat:no-repeat;
+	background-position:right top; 
+}
+
+#main_right_bottom{
+	background: url('../images/main_div_right_bottom.png');
+	background-repeat:no-repeat;
+	background-position:right bottom; 
+}
+
+#main_left_bottom{
+	background: url('../images/main_div_left_bottom.png');
+	background-repeat:no-repeat;
+	background-position:left bottom; 
+}
+
+#menu_table{
+	height: 60px;
+	text-align: center;
+	font-family: 'Cagliostro', sans-serif;
+	color: white;
+	font-size: 24px;
+	text-shadow: 4px 4px 4px green;	
+}
+
+#menu_table select{
+	border: white solid 3px;
+	padding: 3px;
+	width: 40%;
+}
+
+#menu_table input{
+	border: white solid 3px;
+	padding: 3px;
+	width: 40%;
+}
+
+#menu_table td{
+	margin-left: 5px;
+	margin-right: 5px;
+}
